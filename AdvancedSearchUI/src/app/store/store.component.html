@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-dark text-white">
+            <a class="navbar-brand">SPORTS STORE</a>
+            <app-cart-summary></app-cart-summary>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 p-2">
+            <div class="col-3 p-2">
+                <button class="btn btn-block btn-outline-primary m-1" (click)="changeCategory(null)">Home</button>
+                <button *ngFor="let cat of categories" class="btn btn-outline-primary btn-block m-1" style="width: max-content;"
+                [class.active]="cat == selectedCategory" (click)="changeCategory(cat)">
+                    {{cat}}
+                </button>
+            </div>
+        </div>
+        <div class="col-9 p-2">
+            <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
+                <h4>
+                    {{product.name}}
+                    <span class="badge badge-pill badge-primary float-right bg-dark">
+                        {{ product.price | currency:"USD":"symbol":"2.2-2" }}
+                    </span>
+                </h4>
+                <div class="card-text bg-white p-1">{{product.description}}</div>
+                <button class="btn btn-success btn-sm float-right" (click)="addProductToCart(product)">
+                    Add To Cart
+                </button>
+            </div>
+            <div class="row">
+                <div class="form-inline float-left mr-1 col">
+                    <select class="form-control" [value]="productsPerPage" (change)="changePageSize($event)">
+                        <option value="3">3 per Page</option>
+                        <option value="4">4 per Page</option>
+                        <option value="6">6 per Page</option>
+                        <option value="8">8 per Page</option>
+                    </select>
+                </div>
+                <div class="btn-group float-right mr-1 col">
+                    <button *ngFor="let page of pageNumbers" (click)="changePage(page)" class="btn btn-outline-primary"
+                        [class.active]="page == currentPage">
+                        {{page}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
