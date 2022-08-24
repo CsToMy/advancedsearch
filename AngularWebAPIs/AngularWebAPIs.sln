@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportsStoreWebAPI", "SportsStoreWebAPI\SportsStoreWebAPI.csproj", "{94E6FB03-C5E7-455C-BAF8-44DD80549C84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{3F41BED0-1101-43D7-913B-0A9BD9FF9E52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{CD2A8BEC-4933-4B43-849E-AD3F15681157}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94E6FB03-C5E7-455C-BAF8-44DD80549C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94E6FB03-C5E7-455C-BAF8-44DD80549C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94E6FB03-C5E7-455C-BAF8-44DD80549C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94E6FB03-C5E7-455C-BAF8-44DD80549C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F41BED0-1101-43D7-913B-0A9BD9FF9E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F41BED0-1101-43D7-913B-0A9BD9FF9E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F41BED0-1101-43D7-913B-0A9BD9FF9E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F41BED0-1101-43D7-913B-0A9BD9FF9E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2A8BEC-4933-4B43-849E-AD3F15681157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2A8BEC-4933-4B43-849E-AD3F15681157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2A8BEC-4933-4B43-849E-AD3F15681157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2A8BEC-4933-4B43-849E-AD3F15681157}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20D68D7E-B9BA-4FBE-A704-2F25FCAB629E}
+	EndGlobalSection
+EndGlobal
