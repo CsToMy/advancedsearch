@@ -1,24 +1,33 @@
 import { Injectable } from "@angular/core";
-import { ArgumentOutOfRangeError } from "rxjs";
 import { Product } from "./product.model";
-import { StaticDataSource } from "./static.datasource";
-
+import { RestDataSource } from "./rest.datasource";
 @Injectable()
 export class ProductRepository {
-    private products: Product[] = [];
-    private categories: string[] = [];
+    public products: Product[] = [];
+    public categories: string[] = [];
     
-    constructor(private dataSource: StaticDataSource) {
+    constructor(private dataSource: RestDataSource) {
+        
         dataSource.getProducts().subscribe(data => {
             this.products = data;
-            this.categories = data.map<string>(p => p.category)
-            .filter((c, index, array) => array.indexOf(c) == index)
-            .sort();
+        });
+
+        dataSource.getCategories().subscribe(data => {
+            this.categories = data.sort();
         });
     }
 
     getProducts(category: string|null): Product[] {
-        return this.products.filter(p => category == null || category == p.category);
+        this.dataSource.getProducts().subscribe(data => {
+            this.products = data;
+            return this.products.filter(p => category == null || category == p.category);
+        }, 
+        error => {
+            console.log("Hiba történt. "+ JSON.stringify(error));
+            return [];
+        });
+
+        return [];
     }
 
     getProduct(id: number): Product | undefined {

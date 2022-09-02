@@ -16,17 +16,30 @@
             </div>
         </div>
         <div class="col-9 p-2">
-            <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
-                <h4>
-                    {{product.name}}
-                    <span class="badge badge-pill badge-primary float-right bg-dark">
-                        {{ product.price | currency:"USD":"symbol":"2.2-2" }}
-                    </span>
-                </h4>
-                <div class="card-text bg-white p-1">{{product.description}}</div>
-                <button class="btn btn-success btn-sm float-right" (click)="addProductToCart(product)">
-                    Add To Cart
-                </button>
+            <div *ngFor="let product of products" class="card m-3 p-1 bg-light">
+                <div class="product-card bg-pink">
+                    <h4>
+                        {{product.name}}
+                        <span class="badge badge-pill badge-primary float-right bg-dark">
+                            {{ product.price | currency:"USD":"symbol":"2.2-2" }}
+                        </span>                   
+                    </h4>                
+                    <div class="card-text bg-white p-1">
+                        <h6>{{product.description}}</h6>
+                        <div class="product-details">
+                            <label>Details</label>
+                            <ul>
+                                <li><strong>Weight:</strong><label>{{product.dimensions.weight}}</label><label>{{product.dimensions.weightUnit}}</label></li>
+                                <li><strong>Height:</strong><label>{{product.dimensions.height}}</label><label>{{product.dimensions.sizeUnit}}</label></li>
+                                <li><strong>Length:</strong><label>{{product.dimensions.length}}</label><label>{{product.dimensions.sizeUnit}}</label></li>
+                                <li><strong>Width:</strong><label>{{product.dimensions.width}}</label><label>{{product.dimensions.sizeUnit}}</label></li>
+                            </ul>
+                        </div>                       
+                    </div>
+                    <button class="btn btn-success btn-sm float-right" (click)="addProductToCart(product)">
+                        Add To Cart
+                    </button>
+                </div>
             </div>
             <div class="row">
                 <div class="form-inline float-left mr-1 col">

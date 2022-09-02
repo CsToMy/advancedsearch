@@ -13,6 +13,8 @@ export class StoreComponent {
     productsPerPage: number = 3;
     currentPage: number = 1;
 
+    // public products2: Product[] = [];
+
     constructor(private repository: ProductRepository, 
                 private cart: Cart,
                 private router: Router) { }
