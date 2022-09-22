@@ -1,5 +1,4 @@
 ﻿using Common;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SportsStoreWebAPI.Interfaces;
 
@@ -23,10 +22,10 @@ namespace SportsStoreWebAPI.Controllers
             return Ok(result);
         }
 
-        [HttpGet("getProducts/{categories}")]
-        public IActionResult GetProducts(string category)
+        [HttpGet("getProducts/{category?}")]
+        public IActionResult GetProducts(string? category = null)
         {
-            var result = _productService.GetProducts(category);
+            var result = _productService.GetProducts(category??string.Empty);
             return Ok(result);
         }
 

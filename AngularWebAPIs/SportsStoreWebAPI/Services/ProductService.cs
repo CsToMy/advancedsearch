@@ -21,7 +21,7 @@ namespace SportsStoreWebAPI.Services
 
         public List<string> GetProductCategories()
         {
-            List<string> result = null;
+            List<string> result;
 
             try
             {
@@ -30,6 +30,11 @@ namespace SportsStoreWebAPI.Services
             catch (Exception e)
             {
                 _logger.LogError("Error in ProductService in GetProductCategories: " + e.Message);
+                if(e.InnerException != null)
+                {
+                    _logger.LogError(e.InnerException.Message);
+                }
+                result = null!;
             }
 
             return result;
@@ -37,7 +42,7 @@ namespace SportsStoreWebAPI.Services
 
         public List<Product> GetProducts(string category)
         {
-            List<Product> result = null;
+            List<Product> result = null!;
             try
             {
                 result = _productRepository.GetProducts(category);
@@ -45,6 +50,10 @@ namespace SportsStoreWebAPI.Services
             catch(Exception e)
             {
                 _logger.LogError("Error in ProductService in GetProductCategories: " + e.Message);
+                if (e.InnerException != null)
+                {
+                    _logger.LogError(e.InnerException.Message);
+                }
             }
 
             return result;
@@ -52,7 +61,7 @@ namespace SportsStoreWebAPI.Services
 
         public List<Product> SearchProduct(ProductExt productFilter)
         {
-            List<Product> result = null;
+            List<Product> result = null!;
             try
             {
                 result = _productRepository.SearchProduct(productFilter).ToList();
@@ -60,6 +69,10 @@ namespace SportsStoreWebAPI.Services
             catch (Exception e)
             {
                 _logger.LogError("Error in ProductService in GetProductCategories: " + e.Message);
+                if (e.InnerException != null)
+                {
+                    _logger.LogError(e.InnerException.Message);
+                }
             }
 
             return result;

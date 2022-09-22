@@ -19,7 +19,9 @@ namespace DAL
                     Height = 30,
                     Length = 20,
                     Weight = 76.2,
-                    Width = 230
+                    Width = 230,
+                    SizeUnit = "cm",
+                    WeightUnit = "kg"
                 }
             },
             new Product
@@ -34,7 +36,9 @@ namespace DAL
                     Height = 40,
                     Length = 20,
                     Weight = 57.2,
-                    Width = 140
+                    Width = 140,
+                    SizeUnit = "cm",
+                    WeightUnit = "kg"
                 }
             },
             new Product
@@ -49,7 +53,9 @@ namespace DAL
                     Height = 50,
                     Length = 20,
                     Weight = 76.2,
-                    Width = 230
+                    Width = 230,
+                    SizeUnit = "cm",
+                    WeightUnit = "kg"
                 }
             },
             new Product
@@ -64,9 +70,28 @@ namespace DAL
                     Height = 30,
                     Length = 20,
                     Weight = 76.2,
-                    Width = 230
+                    Width = 230,
+                    SizeUnit = "cm",
+                    WeightUnit = "kg"
                 }
             },
+            new Product
+            {
+                Id = 4,
+                Name = "Chess Board",
+                Category = "Category 2",
+                Description = "Board for playing chess. The package contains black and white figures.",
+                Price = 75.89,
+                Dimensions = new Dimension
+                {
+                    Height = 10,
+                    Length = 45,
+                    Weight = 1750,
+                    Width = 45,
+                    SizeUnit = "cm",
+                    WeightUnit = "gramm"
+                }
+            }
         };
 
         public static List<Product> Products

@@ -34,7 +34,7 @@ namespace DAL.Repositories
 
         public List<Product> GetProducts(string category)
         {
-            List<Product> result = null;
+            List<Product> result = null!;
 
             try
             { 
@@ -63,19 +63,19 @@ namespace DAL.Repositories
                 
                 if(productFilter != null)
                 {
-                    if (!string.IsNullOrEmpty(productFilter.Name))
+                    if (!String.IsNullOrEmpty(productFilter.Name))
                     {
                         result = result.Where(prod => prod.Name.StartsWith(productFilter.Name));
                     }
 
-                    if (!string.IsNullOrEmpty(productFilter.Category))
+                    if (!String.IsNullOrEmpty(productFilter.Category))
                     {
                         result = result.Where(prod => prod.Category.StartsWith(productFilter.Category));
                     }
 
-                    if (!string.IsNullOrEmpty(productFilter.Description))
+                    if (!String.IsNullOrEmpty(productFilter.Description))
                     {
-                        result = result.Where(prod => prod.Description.StartsWith(productFilter.Description));
+                        result = result.Where(prod => prod.Description!= null && prod.Description.StartsWith(productFilter.Description));
                     }
 
                     if(productFilter.PriceFrom != null)
