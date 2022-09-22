@@ -20,5 +20,9 @@ jobs:
       run: dotnet restore ./AngularWebAPIs/AngularWebAPIs.sln
     - name: Build
       run: dotnet build ./AngularWebAPIs/AngularWebAPIs.sln --no-restore --configuration Release -warnaserror -graph
+  testing:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
     - name: Test
       run: dotnet test --no-build --verbosity normal --no-restore
